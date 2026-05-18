@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: #f0f0ee;
+  color: #111111;
+  font-size: 13px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.2); }
+
+/* Smooth transitions */
+* { transition-property: background-color, border-color, color, opacity, box-shadow;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+
+/* Blink animation for live dot */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.animate-blink { animation: blink 2s ease-in-out infinite; }
