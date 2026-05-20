@@ -36,6 +36,21 @@ The first run seeds the database with synthetic demo data (8 nostro accounts, ~1
 | API      | http://localhost:8000   |
 | API Docs | http://localhost:8000/docs |
 
+### Re-seed the Database
+
+The database is seeded automatically on first launch. If you need to re-seed (e.g. after schema changes or to refresh demo data), wipe the volume and rebuild:
+
+```bash
+docker compose down -v
+docker compose up --build
+```
+
+Alternatively, run the seeder manually inside the running backend container:
+
+```bash
+docker compose exec backend python -m app.data_generator.seed_db
+```
+
 ### Stop
 
 ```bash
